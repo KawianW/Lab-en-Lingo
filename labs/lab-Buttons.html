@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Buttons</title>
+</head>
+
+    <body class="bgc">
+        <div id="container"></div>
+    </body>
+</html>
+<!-- ------------------------------------------------------------------------- -->
+<script>
+    var body = document.getElementsByClassName("bgc");
+var container = document.getElementById("container");
+container.style.height = "700px";
+container.style.textAlign = "center";
+container.style.paddingTop = "50px";
+var colors = ["green", "red", "blue"];
+
+// button1
+var button = document.createElement("BUTTON");
+button.innerHTML = "Button1";
+container.appendChild(button);
+button.addEventListener("click", function(){
+   container.style.backgroundColor = colors[0];
+});
+
+// button2
+var button = document.createElement("BUTTON");
+button.innerHTML = "Button2";
+container.appendChild(button);
+button.addEventListener("click", function(){
+    container.style.backgroundColor = colors[1];
+});
+// button3
+var button = document.createElement("BUTTON");
+button.innerHTML = "Button3";
+container.appendChild(button);
+button.addEventListener("click", function(){
+    container.style.backgroundColor = colors[2];
+});
+</script>
