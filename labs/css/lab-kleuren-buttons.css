@@ -1,0 +1,18 @@
+#container{
+	background-color: gray;
+	width: 800px;
+	height: 500px;
+	margin: 0 auto;
+}
+
+.knop{
+	width: 100Px;
+	height: 50px;
+	margin: 25 0 0 20px;
+	color: white;
+	margin-left: 50px;
+	margin-top: 25px;
+	color: black;
+	background-color: green
+
+}
