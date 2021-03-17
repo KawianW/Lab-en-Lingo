@@ -1,0 +1,51 @@
+body{
+    background-color: lightgray;
+}  
+  .column {
+    float: left;
+    width: 15%;
+    padding: 10px;
+    border: 1px solid;
+    margin-left: 10px;
+  }
+
+  .row {
+    padding-top: 10%;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.container{
+    text-align: center;
+    height: 1000px;
+}
+
+.yellow{
+    padding-top: 15%;
+    height: 200px;
+    width: 750px;
+    background-color: yellow;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.white{
+    box-sizing: border-box;
+    background-color: white;
+    width: 750px;
+    height: 200px;
+    margin: auto;
+}
+
+.devider-word{
+    padding-left: 18px;
+    margin-bottom: 10px;
+}
+
+.devider-guess{
+    margin-bottom: 10px;
+}
