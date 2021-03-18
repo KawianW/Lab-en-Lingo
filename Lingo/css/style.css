@@ -1,0 +1,45 @@
+.container{
+    height: 770px;
+    margin-top: 50px;
+}
+
+#playboard{
+    height: 700px;
+    width: calc(100% - 200px);
+    margin: auto;
+    background-image: url("../img/lingoBackground.jpg");
+    background-size: cover;
+    z-index: -1;
+}
+
+#playboard h1{
+    text-align: center;
+    color: white;
+    font-size: xx-large;
+}
+
+#button_1{
+    padding: 5px 20px;
+    background-color: gray;
+    color: white;
+    box-shadow: none;
+    text-decoration: none;
+    border-color: gray;
+}
+
+.row{
+	margin: 0 auto;
+	height: 100px;
+	width: fit-content;
+
+}
+
+.column{
+	width: 98px;
+	height: 98px;
+	float: left;
+	border-radius: 5px;
+	font-size: 75px;
+	text-align: center;
+    border: 1px solid #000;
+}
