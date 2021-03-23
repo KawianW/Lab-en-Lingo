@@ -1,5 +1,6 @@
 var inColumn = 1;
 var inRow = 1;
+var lingoWord = words[Math.floor(Math.random() * words.length)];
 var guess = [];
 
 
@@ -45,9 +46,22 @@ function key() {
 			guess.push(key_press);
 			console.log(guess.length);
 			console.log(guess);
-			Next();
+			next();
 		}else{
 			alert("Dit is geen letter!");
 		}
+	}
+}
+
+function next(){
+	if (inColumn > 5){
+		setTimeout(function(){
+			inColumn = 1;
+			inRow++;
+			if(inRow > 5){
+				alert("Hey jammer man, je hebt het goed gedaan maar het woord was " + lingoWord + " probeer het anders nog eens ;)");
+				location.reload();
+			}
+			guess.splice(0, guess.length);}, 1000);
 	}
 }
