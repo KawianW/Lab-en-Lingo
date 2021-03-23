@@ -1,6 +1,11 @@
+var inColumn = 1;
+var inRow = 1;
+var guess = [];
+
 
 const button1 = document.getElementById("button_1");
 button1.onclick = create;
+
 
 function create(){
 	//Maakt de rijen aan
@@ -25,5 +30,24 @@ function create(){
 			Column.appendChild(paragraph);
 		}
         document.getElementById("gameContainer").appendChild(Row);
+		key();
+	}
+}
+
+function key() {
+	//Zorgt ervoor dat je het toetsenbord kan gebruiken en hierdoor een later laat toevoegen aan de DIV
+	document.onkeypress = function(event){
+		//var key_press = String.fromCharCode(event.key);
+		var key_press = String.fromCharCode(event.keyCode);
+		if (key_press.match(/[a-z]/i)){
+			document.getElementById("column_" + inRow + "." + inColumn).firstChild.style.opacity = "1";
+			document.getElementById("column_" + inRow + "." + inColumn++).firstChild.innerHTML = key_press;
+			guess.push(key_press);
+			console.log(guess.length);
+			console.log(guess);
+			Next();
+		}else{
+			alert("Dit is geen letter!");
+		}
 	}
 }
