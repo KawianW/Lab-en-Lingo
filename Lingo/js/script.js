@@ -66,6 +66,22 @@ function check(){
 			answer[i] = "*";
 		}
 	}
+	if(checkAllValues(answer) == true){
+		setTimeout(function(){
+			alert("Goed gedaan!");
+			window.location.reload();
+		},500);
+	}
+	//Checkt ofdat de letter die je hebt ingevoerd ergens in het woord staat, als dit zo is dan maakt hij de achtergrond geel
+	for(var i = 0; i < answer.length; i++){
+		for(var j = 0; j < answer.length; j++){
+			if (guess[i] == answer[j]){
+				document.getElementById("column_" + inRow + "." + (i + 1)).style.backgroundColor = "yellow";
+				guess[i] = " ";
+				answer[j] = "*";
+			}
+		}
+	}
 }
 
 function next(){
