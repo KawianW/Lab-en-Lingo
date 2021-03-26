@@ -2,7 +2,8 @@ var inColumn = 1;
 var inRow = 1;
 var lingoWord = words[Math.floor(Math.random() * words.length)];
 var guess = [];
-
+var correctLetters = [lingoWord.charAt(0), " ", " ", " ", " "];
+console.log(lingoWord);
 
 const button1 = document.getElementById("button_1");
 button1.onclick = create;
@@ -49,6 +50,20 @@ function key() {
 			next();
 		}else{
 			alert("Dit is geen letter!");
+		}
+	}
+}
+
+function check(){
+	//Checkt ofdat de letter van het woord gelijk is aan het de letter van het geraden woord, als dit zo is maakt het de achtergrond groen
+	var answer = lingoWord.split("");
+	console.log("answer");
+	for(var i = 0; i < answer.lenght; i++){
+		if(guess[i] == answer[i]){
+			correctLetters[i] = answer[i];
+			document.getElementById("column_" + inRow + "." + (i + 1)).style.backgroundColor = "green";
+			guess[i] = " ";
+			answer[i] = "*";
 		}
 	}
 }
