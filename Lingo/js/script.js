@@ -37,7 +37,7 @@ function create(){
 }
 
 function key() {
-	//Zorgt ervoor dat je het toetsenbord kan gebruiken en hierdoor een later laat toevoegen aan de DIV
+	//Zorgt ervoor dat je het toetsenbord kan gebruiken en hierdoor later laat toevoegen aan de DIV
 	document.onkeypress = function(event){
 		//var key_press = String.fromCharCode(event.key);
 		var key_press = String.fromCharCode(event.keyCode);
@@ -84,6 +84,7 @@ function check(){
 	}
 }
 
+// Zorgt ervoor dat je opnieuw een woord kan raden
 function next(){
 	if (inColumn > 5){
 		setTimeout(function(){
@@ -93,6 +94,15 @@ function next(){
 				alert("Hey jammer man, je hebt het goed gedaan maar het woord was " + lingoWord + " probeer het anders nog eens ;)");
 				location.reload();
 			}
+			addCorrectLetter();
 			guess.splice(0, guess.length);}, 1000);
+	}
+}
+
+// Laat de eerste letter van het woord zien
+function addCorrectLetter() {
+	for(i = 1; i < 6; i++){
+		document.getElementById("column_" + inRow + "." + i).firstChild.innerHTML = correctLetters[i-1];
+		document.getElementById("column_" + inRow + "." + i).firstChild.style.opacity = "0.5";
 	}
 }
