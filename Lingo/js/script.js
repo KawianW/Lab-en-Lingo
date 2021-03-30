@@ -5,9 +5,13 @@ var guess = [];
 var correctLetters = [lingoWord.charAt(0), " ", " ", " ", " "];
 console.log(lingoWord);
 
-const button1 = document.getElementById("button_1");
-button1.onclick = create;
+document.getElementById("button_1").style.display = "none";
 
+button_2.onclick = function(){
+	document.getElementById("button_2").style.display = "none";
+	create();
+	addCorrectLetter();
+}
 
 function create(){
 	//Maakt de rijen aan
@@ -32,6 +36,7 @@ function create(){
 			Column.appendChild(paragraph);
 		}
         document.getElementById("gameContainer").appendChild(Row);
+		// voegt de eerste letter toe aan de kolom
 		key();
 	}
 }
@@ -87,6 +92,7 @@ function check(){
 // Zorgt ervoor dat je opnieuw een woord kan raden
 function next(){
 	if (inColumn > 5){
+		check();
 		setTimeout(function(){
 			inColumn = 1;
 			inRow++;
@@ -97,6 +103,24 @@ function next(){
 			addCorrectLetter();
 			guess.splice(0, guess.length);}, 1000);
 	}
+	
+}
+button_1.onclick = function(){
+	location.reload();
+}
+
+function checkAllValues(myArray){
+    for (var i = 0; i < myArray.length; i++){
+        if (!(myArray[i].includes("*"))){
+            return false;
+        }
+        if (i == myArray.length-1){
+            if (myArray[i] != "*"){
+                return false;
+            }
+            return true;
+        }
+    }
 }
 
 // Laat de eerste letter van het woord zien
