@@ -9,6 +9,7 @@ document.getElementById("button_1").style.display = "none";
 
 button_2.onclick = function(){
 	document.getElementById("button_2").style.display = "none";
+	document.getElementById("button_1").style.display = "block";
 	create();
 	addCorrectLetter();
 }
@@ -61,12 +62,12 @@ function key() {
 
 function check(){
 	//Checkt ofdat de letter van het woord gelijk is aan het de letter van het geraden woord, als dit zo is maakt het de achtergrond groen
-	var answer = lingoWord.split("");
-	console.log("answer");
-	for(var i = 0; i < answer.lenght; i++){
+	var answer = Array.from(lingoWord);
+	console.log(answer.length);
+	for(var i = 0; i < answer.length; i++){
 		if(guess[i] == answer[i]){
 			correctLetters[i] = answer[i];
-			document.getElementById("column_" + inRow + "." + (i + 1)).style.backgroundColor = "green";
+			document.getElementById("column_" + inRow + "." + (i + 1)).style.backgroundColor = "red";
 			guess[i] = " ";
 			answer[i] = "*";
 		}
@@ -109,6 +110,7 @@ button_1.onclick = function(){
 	location.reload();
 }
 
+// checkt 
 function checkAllValues(myArray){
     for (var i = 0; i < myArray.length; i++){
         if (!(myArray[i].includes("*"))){
